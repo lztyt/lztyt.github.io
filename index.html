@@ -249,6 +249,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/01/m/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/WechatIMG136.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lzty">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/11/01/m/" itemprop="url">m</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-11-01T18:58:07+08:00">
+                2022-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/01/jvm_lock/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -342,8 +461,13 @@
       
         
           
-            <p>##1.synchronized<br>##2.无锁<br>##3.偏向锁<br>##4.轻量级锁<br>##5.重量级锁</p>
-
+            <h2 id="1-synchronized"><a href="#1-synchronized" class="headerlink" title="1.synchronized"></a>1.synchronized</h2><p>synchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。<br>synchronized保证了原子性、可见性、一致性。可以用来修饰</p>
+<blockquote>
+<p>实例方法：作用于当前实例加锁<br>静态方法：作用于当前类对象加锁<br>代码块：作用于指定的对象实例加锁</p>
+</blockquote>
+<p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。</p>
+<p><img src="/.com//markword.png" alt="markword"></p>
+<h2 id="2-无锁"><a href="#2-无锁" class="headerlink" title="2.无锁"></a>2.无锁</h2><h2 id="3-偏向锁"><a href="#3-偏向锁" class="headerlink" title="3.偏向锁"></a>3.偏向锁</h2><h2 id="4-轻量级锁"><a href="#4-轻量级锁" class="headerlink" title="4.轻量级锁"></a>4.轻量级锁</h2><h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2>
           
         
       
@@ -428,7 +552,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
