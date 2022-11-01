@@ -348,8 +348,16 @@
 <blockquote>
 <p>实例方法：作用于当前实例加锁<br>静态方法：作用于当前类对象加锁<br>代码块：作用于指定的对象实例加锁</p>
 </blockquote>
-<p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。<br><img src="/2022/11/01/jvm_lock/markword.png" alt="markword"></p>
-<h2 id="2-无锁"><a href="#2-无锁" class="headerlink" title="2.无锁"></a>2.无锁</h2><h2 id="3-偏向锁"><a href="#3-偏向锁" class="headerlink" title="3.偏向锁"></a>3.偏向锁</h2><h2 id="4-轻量级锁"><a href="#4-轻量级锁" class="headerlink" title="4.轻量级锁"></a>4.轻量级锁</h2><h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2>
+<p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。</p>
+<blockquote>
+<p><img src="/2022/11/01/jvm_lock/markword.png" alt="markword"></p>
+</blockquote>
+<h2 id="2-无锁"><a href="#2-无锁" class="headerlink" title="2.无锁"></a>2.无锁</h2><p>无锁状态时前25bit存储的是对象的hashcode(有引用)。对象头中有1bit来表示是否是偏向锁，2bit存放锁标志位，偏向锁位与锁标志位合起来“001”就代表无锁。无锁就是没有对任何资源进行锁定，所有线程都能访问并修改资源。</p>
+<h2 id="3-偏向锁"><a href="#3-偏向锁" class="headerlink" title="3.偏向锁"></a>3.偏向锁</h2><p>对象头中记录了获得偏向锁的线程ID，偏向锁与锁标志位合起来“101”就代表偏向锁。</p>
+<p>为什么要引入偏向锁？<br>有研究发现大多数时候是不存在锁竞争的，常常是一个线程多次获得同一个锁，因此如果每次都要竞争锁会增大很多没有必要付出的代价，为了降低获取锁的代价，才引入的偏向锁。</p>
+<p>当线程获取锁的时候，先判断锁的状态，如果是偏向锁则会通过Mark Word中的线程Id判断是否是同一个线程如果是就继续访问(说明jvm的锁是可重入锁)，如果不是同一个线程则会判断前一个线程是否还持有锁。持有锁会会升级成为轻量锁，没有持有锁当前线程会获取锁，还是偏向锁状态。</p>
+<p><em><strong>值得注意的是现成在持有偏向锁后不会主动释放锁或者降为无锁状态</strong></em></p>
+<h2 id="4-轻量级锁"><a href="#4-轻量级锁" class="headerlink" title="4.轻量级锁"></a>4.轻量级锁</h2><h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2><h2 id="6-锁升级膨胀的过程"><a href="#6-锁升级膨胀的过程" class="headerlink" title="6.锁升级膨胀的过程"></a>6.锁升级膨胀的过程</h2>
           
         
       
