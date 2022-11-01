@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="lzty">
 <meta property="og:description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/jvm_lock/markword.png">
+<meta property="og:image" content="http://example.com/2022/11/01/jvm_lock/markword.png">
 <meta property="article:published_time" content="2022-11-01T03:25:07.000Z">
-<meta property="article:modified_time" content="2022-11-01T12:49:28.531Z">
+<meta property="article:modified_time" content="2022-11-01T12:54:33.507Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jvm">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/jvm_lock/markword.png">
+<meta name="twitter:image" content="http://example.com/2022/11/01/jvm_lock/markword.png">
 
 
 
@@ -353,7 +353,7 @@
 </blockquote>
 <p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。</p>
 <blockquote>
-<p><img src="/jvm_lock/markword.png" alt="markword"></p>
+<p><img src="/2022/11/01/jvm_lock/markword.png" alt="markword"></p>
 </blockquote>
 <h2 id="2-无锁"><a href="#2-无锁" class="headerlink" title="2.无锁"></a>2.无锁</h2><p>无锁状态时前25bit存储的是对象的hashcode(有引用)。对象头中有1bit来表示是否是偏向锁，2bit存放锁标志位，偏向锁位与锁标志位合起来“001”就代表无锁。无锁就是没有对任何资源进行锁定，所有线程都能访问并修改资源。</p>
 <h2 id="3-偏向锁"><a href="#3-偏向锁" class="headerlink" title="3.偏向锁"></a>3.偏向锁</h2><p>对象头中记录了获得偏向锁的线程ID，偏向锁与锁标志位合起来“101”就代表偏向锁。</p>
