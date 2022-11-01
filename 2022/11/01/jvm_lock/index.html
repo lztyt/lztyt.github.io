@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。  2.无锁">
+<meta name="description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。 2.无">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm锁">
 <meta property="og:url" content="http://example.com/2022/11/01/jvm_lock/index.html">
 <meta property="og:site_name" content="lzty">
-<meta property="og:description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。  2.无锁">
+<meta property="og:description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。 2.无">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/.com//markword.png">
+<meta property="og:image" content="http://example.com/2022/11/01/jvm_lock/markword.png">
 <meta property="article:published_time" content="2022-11-01T03:25:07.000Z">
-<meta property="article:modified_time" content="2022-11-01T10:59:15.201Z">
+<meta property="article:modified_time" content="2022-11-01T11:21:14.399Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jvm">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/.com//markword.png">
+<meta name="twitter:image" content="http://example.com/2022/11/01/jvm_lock/markword.png">
 
 
 
@@ -345,12 +345,13 @@
       
 
       
-        <h2 id="1-synchronized"><a href="#1-synchronized" class="headerlink" title="1.synchronized"></a>1.synchronized</h2><p>synchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。<br>synchronized保证了原子性、可见性、一致性。可以用来修饰</p>
+        <meta name="referrer" content="no-referrer">
+
+<h2 id="1-synchronized"><a href="#1-synchronized" class="headerlink" title="1.synchronized"></a>1.synchronized</h2><p>synchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。<br>synchronized保证了原子性、可见性、一致性。可以用来修饰</p>
 <blockquote>
 <p>实例方法：作用于当前实例加锁<br>静态方法：作用于当前类对象加锁<br>代码块：作用于指定的对象实例加锁</p>
 </blockquote>
-<p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。</p>
-<p><img src="/.com//markword.png" alt="markword"></p>
+<p>每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。<br><img src="/2022/11/01/jvm_lock/markword.png" alt="markword"></p>
 <h2 id="2-无锁"><a href="#2-无锁" class="headerlink" title="2.无锁"></a>2.无锁</h2><h2 id="3-偏向锁"><a href="#3-偏向锁" class="headerlink" title="3.偏向锁"></a>3.偏向锁</h2><h2 id="4-轻量级锁"><a href="#4-轻量级锁" class="headerlink" title="4.轻量级锁"></a>4.轻量级锁</h2><h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2>
       
     </div>
@@ -379,22 +380,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/11/01/m/" rel="prev" title="m">
-                m <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
@@ -472,7 +457,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
