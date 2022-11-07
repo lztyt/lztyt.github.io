@@ -87,8 +87,9 @@
 <meta property="og:description" content="1.synchronizedsynchronized是Java中最常用也最简单用于解决并发问题的方式，是48个关键字之一。synchronized保证了原子性、可见性、一致性。可以用来修饰  实例方法：作用于当前实例加锁静态方法：作用于当前类对象加锁代码块：作用于指定的对象实例加锁  每个对象都含有对象头，synchronized通过控制对象头中的Mark Word来给对象加锁、解锁。">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/2022/11/01/jvm_lock/markword.png">
+<meta property="og:image" content="http://example.com/2022/11/01/jvm_lock/Mutex_Lock.png">
 <meta property="article:published_time" content="2022-11-01T03:25:07.000Z">
-<meta property="article:modified_time" content="2022-11-01T12:54:33.507Z">
+<meta property="article:modified_time" content="2022-11-07T06:45:42.727Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jvm">
 <meta property="article:tag" content="Java">
@@ -363,7 +364,8 @@
 <h2 id="4-轻量级锁-CAS自旋"><a href="#4-轻量级锁-CAS自旋" class="headerlink" title="4.轻量级锁(CAS自旋)"></a>4.轻量级锁(CAS自旋)</h2><p>一旦有多个线程竞争锁，偏向锁就会升级成轻量级锁。<br><strong>为什么要引入轻量级锁？</strong><br>轻量级锁考虑的是竞争锁对象的线程不多，而且线程持有锁的时间也不长的情景。</p>
 <p>因为阻塞线程需要CPU从用户态转到内核态，代价较大，如果刚刚阻塞不久这个锁就被释放了，那这个代价就有点得不偿失了，因此这个时候就干脆不阻塞这个线程，让它自旋这等待锁释放。</p>
 <p><strong>轻量级锁的实现方式</strong><br>多个线程在竞争锁的时候都会在各自的线程栈帧中生成一个Lock Record空间用来存放对象目前的Mark Word拷贝，用CAS操作不断去修改Mark Word中pointer to Lock Record区域，将该指针指向自己的Lock Record，修改成功的线程获取到锁。未获取到锁的线程则会不断自旋阻塞尝试获取到锁。当阻塞的线程越来越多的时候就占用过多的资源，轻量级锁就会升级成重量级锁。<br><em><strong>值得注意的是CAS是原子操作</strong></em></p>
-<h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2><h2 id="6-锁升级膨胀的过程"><a href="#6-锁升级膨胀的过程" class="headerlink" title="6.锁升级膨胀的过程"></a>6.锁升级膨胀的过程</h2>
+<h2 id="5-重量级锁"><a href="#5-重量级锁" class="headerlink" title="5.重量级锁"></a>5.重量级锁</h2><h2 id="6-锁升级膨胀的过程"><a href="#6-锁升级膨胀的过程" class="headerlink" title="6.锁升级膨胀的过程"></a>6.锁升级膨胀的过程</h2><p><img src="/2022/11/01/jvm_lock/Mutex_Lock.png" alt="升级膨胀"></p>
+
       
     </div>
     
